@@ -2,6 +2,8 @@
 
 This article will tell you some resources for efficient ways to randomize bits and integers in C++.
 
+Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
+
  - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
  - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
  - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
