@@ -2,8 +2,10 @@
 
 This article will tell you some resources for efficient ways to randomize bits and integers in C++.
 
+ - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
  - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
  - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
+
 
 ```C++ runnable
 #include <iostream>
