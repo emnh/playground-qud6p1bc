@@ -38,6 +38,9 @@ int main()
 }
 ```
 
+If you need an even faster generator, probably go with [Xoroshiro128+](https://prng.di.unimi.it/xoroshiro128plus.c).
+Both of them can be further optimized though by using 2,3 or 4 generators simultaneously and getting vectorized.
+
 Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
 
 ## Resources
