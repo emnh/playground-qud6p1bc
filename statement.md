@@ -59,6 +59,29 @@ There are ways to have an uniform number in the (0,a-1) interval that are slight
 
 Here's the [solution](https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/) and here are [benchmarks](https://www.pcg-random.org/posts/bounded-rands.html).
 
+Fastest code from last link included here for convenience:
+```C++
+uint32_t bounded_rand(rng_t& rng, uint32_t range) {
+    uint32_t x = rng();
+    uint64_t m = uint64_t(x) * uint64_t(range);
+    uint32_t l = uint32_t(m);
+    if (l < range) {
+        uint32_t t = -range;
+        if (t >= range) {
+            t -= range;
+            if (t >= range) 
+                t %= range;
+        }
+        while (l < t) {
+            x = rng();
+            m = uint64_t(x) * uint64_t(range);
+            l = uint32_t(m);
+        }
+    }
+    return m >> 32;
+}
+```
+
 ## Resources
 
 ### Fastest Random Number Generators
