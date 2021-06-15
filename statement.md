@@ -45,6 +45,8 @@ sprkrd: The author of xoshiro also recommends seeding using splitmix64 (which is
 In the case of xoshiro it's clear why: states with lots of 0s affect negatively the quality of the produced numbers.
 In case of lehmer, i'm not so sure that splitmix is that much of a requirement, it would seem it'd work with any non-zero seed.
 
+derjack: Is int128 that fast? I just use xorshift. So perhaps that's also a valid alternative. Benchmarking on CG needed :) .
+
 Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
 
 ## Resources
