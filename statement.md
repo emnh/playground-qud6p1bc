@@ -2,24 +2,48 @@
 
 This article will tell you some resources for efficient ways to randomize bits and integers in C++.
 
-Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
+## Default fast 64 bit RNG for C++
 
- - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
- - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
- - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
-
+Here's a default quite efficient one called lehmer64 if you're too lazy to benchmark a lot of them.
+There might be faster ones if you check the resources, but I haven't done my own benchmarking yet.
+This one should still be up there in the top contenders though.
 
 ```C++ runnable
 #include <iostream>
 
 using namespace std;
 
+__uint128_t g_lehmer64_state = 1;
+
+uint64_t lehmer64() {
+  g_lehmer64_state *= 0xda942042e4dd58b5;
+  return g_lehmer64_state >> 64;
+}
+
 int main() 
 {
-    cout << "Hello, World!";
+    cout << "Hello, World: " << lehmer64() << endl;
+    cout << "Hello, World: " << lehmer64() << endl;
+    cout << "Hello, World: " << lehmer64() << endl;
     return 0;
 }
 ```
+
+Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
+
+## Resources
+
+ - [Random number generators for C performance tested](https://thompsonsed.co.uk/random-number-generators-for-c-performance-tested)
+ - [Testing RNGs](https://github.com/lemire/testingRNG)
+ - [The Fastest Conventional Random Number Generator That Can Pass Big Crush](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/)
+ - [Hash Function Quality and Speed Tests](https://github.com/rurban/smhasher/)
+ - [Preseting XXH3](https://fastcompression.blogspot.com/2019/03/presenting-xxh3.html)
+ - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
+ - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
+ - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
+
+
+
 
 # Advanced usage
 
