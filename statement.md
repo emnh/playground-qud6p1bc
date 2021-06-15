@@ -54,6 +54,10 @@ Once you have chosen a fast random integer generator, you can AND together a few
  - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
  - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
 
+### Suggestions from CodinGame chat
+
+ - [PCG RNGs](https://www.pcg-random.org/index.html)
+ - [Xoshiro / Xoroshiro RNG](https://prng.di.unimi.it/)
 
 # Advanced usage
 
