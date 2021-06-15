@@ -13,7 +13,7 @@ This one should still be up there in the top contenders though.
 I was not sure if you need to seed it using the functions at
 [Lehmer 64 Source Code](https://github.com/lemire/testingRNG/blob/master/source/lehmer64.h)
 or just can give any random seed like "1337" below. Reading the article at Wikipedia on
-(Lehmer RNG)[https://en.wikipedia.org/wiki/Lehmer_random_number_generator] we can see that the seed must be
+[Lehmer RNG](https://en.wikipedia.org/wiki/Lehmer_random_number_generator) we can see that the seed must be
 coprime to the modulus. Well then, it seems that any odd number is coprime to the modulus 2^64,
 since they are not divisible by 2.
 
@@ -38,8 +38,12 @@ int main()
 }
 ```
 
-If you need an even faster generator, probably go with [Xoroshiro128+](https://prng.di.unimi.it/xoroshiro128plus.c).
+If you need an even faster generator, probably go with one of the [Xoroshiro](https://prng.di.unimi.it/).
 Both of them can be further optimized though by using 2,3 or 4 generators simultaneously and getting vectorized.
+
+sprkrd: The author of xoshiro also recommends seeding using splitmix64 (which is the same seeding algorithm that lehmer64 used).
+In the case of xoshiro it's clear why: states with lots of 0s affect negatively the quality of the produced numbers.
+In case of lehmer, i'm not so sure that splitmix is that much of a requirement, it would seem it'd work with any non-zero seed.
 
 Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
 
