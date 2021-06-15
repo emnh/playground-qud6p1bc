@@ -1,5 +1,7 @@
 # How to randomize bits and integers efficiently in C++
 
+## TODO: This article is work in progress.
+
 This article will tell you some resources for efficient ways to randomize bits and integers in C++.
 
 ## Default fast 64 bit RNG for C++
@@ -7,6 +9,10 @@ This article will tell you some resources for efficient ways to randomize bits a
 Here's a default quite efficient one called lehmer64 if you're too lazy to benchmark a lot of them.
 There might be faster ones if you check the resources, but I haven't done my own benchmarking yet.
 This one should still be up there in the top contenders though.
+
+I am not sure if you need to seed it using the functions at
+[Lehmer 64 Source Code](https://github.com/lemire/testingRNG/blob/master/source/lehmer64.h)
+or just can give any random seed like "1337" below.
 
 ```C++ runnable
 #include <iostream>
