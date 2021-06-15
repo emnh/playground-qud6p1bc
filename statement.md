@@ -10,9 +10,12 @@ Here's a default quite efficient one called lehmer64 if you're too lazy to bench
 There might be faster ones if you check the resources, but I haven't done my own benchmarking yet.
 This one should still be up there in the top contenders though.
 
-I am not sure if you need to seed it using the functions at
+I was not sure if you need to seed it using the functions at
 [Lehmer 64 Source Code](https://github.com/lemire/testingRNG/blob/master/source/lehmer64.h)
-or just can give any random seed like "1337" below.
+or just can give any random seed like "1337" below. Reading the article at Wikipedia on
+(Lehmer RNG)[https://en.wikipedia.org/wiki/Lehmer_random_number_generator] we can see that the seed must be
+coprime to the modulus. Well then, it seems that any odd number is coprime to the modulus 2^64,
+since they are not divisible by 2.
 
 ```C++ runnable
 #include <iostream>
