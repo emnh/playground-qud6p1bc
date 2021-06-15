@@ -57,7 +57,7 @@ for instance, for drawing a random int between 0 and a-1, you could do a simple 
 and the modulo operation can be more costly than, say, an addition or a bitwise operation
 There are ways to have an uniform number in the (0,a-1) interval that are slightly faster than %.
 
-Here's the [solution](https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/).
+Here's the [solution](https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/) and here are [benchmarks](https://www.pcg-random.org/posts/bounded-rands.html).
 
 ## Resources
 
