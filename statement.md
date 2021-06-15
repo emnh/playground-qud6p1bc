@@ -39,16 +39,17 @@ Once you have chosen a fast random integer generator, you can AND together a few
 
 ## Resources
 
+### Fastest Random Number Generators
+ - [The Fastest Conventional Random Number Generator That Can Pass Big Crush](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/)
+ - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
  - [Random number generators for C performance tested](https://thompsonsed.co.uk/random-number-generators-for-c-performance-tested)
  - [Testing RNGs](https://github.com/lemire/testingRNG)
- - [The Fastest Conventional Random Number Generator That Can Pass Big Crush](https://lemire.me/blog/2019/03/19/the-fastest-conventional-random-number-generator-that-can-pass-big-crush/)
  - [Hash Function Quality and Speed Tests](https://github.com/rurban/smhasher/)
- - [Preseting XXH3](https://fastcompression.blogspot.com/2019/03/presenting-xxh3.html)
- - [StackOverflow: Need a fast random generator for C](https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c)
+ - [Presenting XXH3](https://fastcompression.blogspot.com/2019/03/presenting-xxh3.html)
+
+### Selecting a random bit from a bitset 
  - [StackOverflow: Best C++ way to choose randomly position of set bit in bitset](https://stackoverflow.com/questions/37460396/best-c-way-to-choose-randomly-position-of-set-bit-in-bitset)
  - [StackOverflow: Find nth set bit in an int](https://stackoverflow.com/questions/7669057/find-nth-set-bit-in-an-int)
-
-
 
 
 # Advanced usage
