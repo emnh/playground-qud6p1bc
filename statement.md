@@ -49,6 +49,16 @@ derjack: Is int128 that fast? I just use xorshift. So perhaps that's also a vali
 
 Once you have chosen a fast random integer generator, you can AND together a few of them, to get probabilities of 1/2, 1/4, 1/8 and so on, for each bit to be set.
 
+## Faster than Modulo Reduction to constrain range of random number
+
+sprkrd: regarding rng speed... often the bottleneck is not in the RNG itself
+it's in the function you use to draw a random sample from an uniform distribution
+for instance, for drawing a random int between 0 and a-1, you could do a simple rng() % a
+and the modulo operation can be more costly than, say, an addition or a bitwise operation
+There are ways to have an uniform number in the (0,a-1) interval that are slightly faster than %.
+
+Here's the [solution](https://lemire.me/blog/2016/06/27/a-fast-alternative-to-the-modulo-reduction/).
+
 ## Resources
 
 ### Fastest Random Number Generators
