@@ -13,7 +13,7 @@ This one should still be up there in the top contenders though.
 
 using namespace std;
 
-__uint128_t g_lehmer64_state = 1;
+__uint128_t g_lehmer64_state = 1337;
 
 uint64_t lehmer64() {
   g_lehmer64_state *= 0xda942042e4dd58b5;
