@@ -82,6 +82,19 @@ uint32_t bounded_rand(rng_t& rng, uint32_t range) {
 }
 ```
 
+## Generating uniform doubles in the unit interval
+
+Quoting https://prng.di.unimi.it/:
+
+A standard double (64-bit) floating-point number in IEEE floating point format has 52 bits of significand, plus an implicit bit at the left of the significand.
+Thus, the representation can actually store numbers with 53 significant binary digits.
+
+Because of this fact, in C99 a 64-bit unsigned integer x should be converted to a 64-bit double using the expression
+
+    #include <stdint.h>
+
+    (x >> 11) * 0x1.0p-53
+
 ## Resources
 
 ### Fastest Random Number Generators
