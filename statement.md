@@ -1,7 +1,5 @@
 # How to randomize bits and integers efficiently in C++
 
-## TODO: This article is work in progress.
-
 This article will tell you some resources for efficient ways to randomize bits and integers in C++.
 
 ## Default fast 64 bit RNG for C++
